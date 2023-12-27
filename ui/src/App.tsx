@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, useCallback, forwardRef } from 'react'
 import { isEnvBrowser } from './utils/misc'
 import './themes.css'
-import { usePhoneCombine } from './hooks/usePhoneCombine'
+import { SendPhoneNotification } from './utils/phoneFunctions'
 
 function App() {
   const [transformScale, setTransformScale] = useState(1)
@@ -27,11 +27,10 @@ function App() {
     }
   }, [])
 
-  usePhoneCombine()
-
   return (
     <DeviceProvider ref={deviceRef} style={{ transform: `scale(${transformScale})` }}>
       <div id="application">
+        <h1 className='text-center text-lg border-b p-4 bg-green-300 rounded-lg'>MX MOTELS APP</h1>
         <h3 className="header">Modals</h3>
         <div className="wrapper">
           <button>Selector</button>
@@ -48,7 +47,7 @@ function App() {
         </div>
         <h3 className="header">Notification</h3>
         <div className="wrapper">
-          <button>Push notification</button>
+          <button onClick={() => SendPhoneNotification('template', 'Test', 'Im a test message ye', 3000)}>Push notification FROM</button>
           <button>Push notification (old)</button>
         </div>
         <h3 className="header">Others</h3>

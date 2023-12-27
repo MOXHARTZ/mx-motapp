@@ -2,7 +2,7 @@ fx_version 'cerulean'
 games { 'gta5' }
 author 'https://github.com/MOXHARTZ'
 client_scripts {
-
+    'client/main.lua'
 }
 
 server_scripts {
