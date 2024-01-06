@@ -32,7 +32,6 @@ body {
 
 .divider {
   left: var(--left);
-  /* top: var(--top); */
   bottom: 0px;
   width: var(--width);
   transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);

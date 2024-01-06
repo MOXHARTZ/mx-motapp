@@ -8,7 +8,8 @@ export type Position = {
 }
 
 export type Divider = {
-    position: Position
+    position: Position;
+    active: number | null;
 }
 
 const Divider = createSlice({
@@ -19,16 +20,20 @@ const Divider = createSlice({
             top: 0,
             width: 0,
             height: 0,
-        }
+        },
+        active: null
     } as Divider,
     reducers: {
         setPosition: (state, action: PayloadAction<Position>) => {
             state.position = action.payload
+        },
+        setActive: (state, action: PayloadAction<number | null>) => {
+            state.active = action.payload
         }
     }
 })
 
-export const { setPosition } = Divider.actions
+export const { setPosition, setActive } = Divider.actions
 export const store = configureStore({
     reducer: {
         Divider: Divider.reducer

@@ -4,7 +4,7 @@ import * as path from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  plugins: [million.vite({ auto: true }), react()],
+  plugins: [react()],
   base: './',
   publicDir: 'public',
   build: {

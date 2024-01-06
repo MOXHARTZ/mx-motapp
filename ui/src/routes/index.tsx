@@ -14,7 +14,7 @@ const routes = createBrowserRouter([
             },
             {
                 path: 'about',
-                element: 'Hakkımızda'
+                element: ''
             },
             {
                 path: '*',
